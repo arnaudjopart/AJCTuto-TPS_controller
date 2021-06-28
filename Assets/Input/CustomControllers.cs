@@ -30,7 +30,7 @@ namespace InputController
                 },
                 {
                     ""name"": ""Move"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""e2d496a7-2490-4af3-ae8b-873a888883a3"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
