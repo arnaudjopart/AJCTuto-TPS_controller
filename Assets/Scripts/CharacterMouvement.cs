@@ -27,6 +27,10 @@ public class CharacterMouvement : MonoBehaviour
     public STATE m_currentState = STATE.DEFAULT;
 
     public GameObject m_aimingCamera;
+    private float aimVelocityX;
+    private float aimVelocityZ;
+    
+
 
     void Awake()
     {
@@ -93,6 +97,15 @@ public class CharacterMouvement : MonoBehaviour
                 var currentCameraForward = m_camera.transform.forward;
                 var forwardCameraOnXZplane = Vector3.ProjectOnPlane(currentCameraForward, Vector3.up);
                 transform.rotation = Quaternion.LookRotation(forwardCameraOnXZplane, Vector3.up);
+
+                var inputValueX = m_controls.Mouvement.AimingX.ReadValue<float>();
+                var inputValueZ = m_controls.Mouvement.AimingZ.ReadValue<float>();
+
+                inputValueX = Mathf.SmoothDamp(m_animator.GetFloat("SpeedAimX"), inputValueX, ref aimVelocityX, .1f);
+                inputValueZ = Mathf.SmoothDamp(m_animator.GetFloat("SpeedAimZ"), inputValueZ, ref aimVelocityZ, .1f);
+                
+                m_animator.SetFloat("SpeedAimX",inputValueX);
+                m_animator.SetFloat("SpeedAimZ",inputValueZ);
                 
                 break;
         }

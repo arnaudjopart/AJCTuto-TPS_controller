@@ -43,6 +43,22 @@ namespace InputController
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""AimingX"",
+                    ""type"": ""Value"",
+                    ""id"": ""9ea06ec2-42f7-49ab-babe-8751e09c5d6e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""AimingZ"",
+                    ""type"": ""Button"",
+                    ""id"": ""61fd8ecb-46eb-47b2-96f4-04170698f621"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -155,6 +171,138 @@ namespace InputController
                     ""action"": ""SwitchToAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""c5f7d970-e231-4f34-8fdb-ab5844998fd0"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""de603e10-5906-4971-8562-88ab31323d34"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""8a644033-f0c9-4764-b5cc-98d4be5bc92c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1f1a392a-ed9e-47ab-9e49-6f3318e0e36f"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""4471311c-5964-4b72-898e-3814fda6e39d"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""50595f76-2e32-4099-bad7-e953f38e6e98"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""80f24674-b9c6-4ec1-b0e0-ac3e8da7dd0e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingZ"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9ccdee22-9dc7-47d5-a2d9-cdc3a1863781"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingZ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""bd413fda-94dd-439b-9b5e-dca4abb38db2"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingZ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""cc3232c6-1305-4745-a7a1-6109eb769d95"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingZ"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""ddb502a5-85c4-4a8e-b3a2-8acbc11364ce"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingZ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""c9b5e330-7eb1-4a06-bfe3-098b712639b7"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimingZ"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -194,6 +342,8 @@ namespace InputController
             m_Mouvement_Look = m_Mouvement.FindAction("Look", throwIfNotFound: true);
             m_Mouvement_Move = m_Mouvement.FindAction("Move", throwIfNotFound: true);
             m_Mouvement_SwitchToAim = m_Mouvement.FindAction("SwitchToAim", throwIfNotFound: true);
+            m_Mouvement_AimingX = m_Mouvement.FindAction("AimingX", throwIfNotFound: true);
+            m_Mouvement_AimingZ = m_Mouvement.FindAction("AimingZ", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -246,6 +396,8 @@ namespace InputController
         private readonly InputAction m_Mouvement_Look;
         private readonly InputAction m_Mouvement_Move;
         private readonly InputAction m_Mouvement_SwitchToAim;
+        private readonly InputAction m_Mouvement_AimingX;
+        private readonly InputAction m_Mouvement_AimingZ;
         public struct MouvementActions
         {
             private @CustomControllers m_Wrapper;
@@ -253,6 +405,8 @@ namespace InputController
             public InputAction @Look => m_Wrapper.m_Mouvement_Look;
             public InputAction @Move => m_Wrapper.m_Mouvement_Move;
             public InputAction @SwitchToAim => m_Wrapper.m_Mouvement_SwitchToAim;
+            public InputAction @AimingX => m_Wrapper.m_Mouvement_AimingX;
+            public InputAction @AimingZ => m_Wrapper.m_Mouvement_AimingZ;
             public InputActionMap Get() { return m_Wrapper.m_Mouvement; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -271,6 +425,12 @@ namespace InputController
                     @SwitchToAim.started -= m_Wrapper.m_MouvementActionsCallbackInterface.OnSwitchToAim;
                     @SwitchToAim.performed -= m_Wrapper.m_MouvementActionsCallbackInterface.OnSwitchToAim;
                     @SwitchToAim.canceled -= m_Wrapper.m_MouvementActionsCallbackInterface.OnSwitchToAim;
+                    @AimingX.started -= m_Wrapper.m_MouvementActionsCallbackInterface.OnAimingX;
+                    @AimingX.performed -= m_Wrapper.m_MouvementActionsCallbackInterface.OnAimingX;
+                    @AimingX.canceled -= m_Wrapper.m_MouvementActionsCallbackInterface.OnAimingX;
+                    @AimingZ.started -= m_Wrapper.m_MouvementActionsCallbackInterface.OnAimingZ;
+                    @AimingZ.performed -= m_Wrapper.m_MouvementActionsCallbackInterface.OnAimingZ;
+                    @AimingZ.canceled -= m_Wrapper.m_MouvementActionsCallbackInterface.OnAimingZ;
                 }
                 m_Wrapper.m_MouvementActionsCallbackInterface = instance;
                 if (instance != null)
@@ -284,6 +444,12 @@ namespace InputController
                     @SwitchToAim.started += instance.OnSwitchToAim;
                     @SwitchToAim.performed += instance.OnSwitchToAim;
                     @SwitchToAim.canceled += instance.OnSwitchToAim;
+                    @AimingX.started += instance.OnAimingX;
+                    @AimingX.performed += instance.OnAimingX;
+                    @AimingX.canceled += instance.OnAimingX;
+                    @AimingZ.started += instance.OnAimingZ;
+                    @AimingZ.performed += instance.OnAimingZ;
+                    @AimingZ.canceled += instance.OnAimingZ;
                 }
             }
         }
@@ -311,6 +477,8 @@ namespace InputController
             void OnLook(InputAction.CallbackContext context);
             void OnMove(InputAction.CallbackContext context);
             void OnSwitchToAim(InputAction.CallbackContext context);
+            void OnAimingX(InputAction.CallbackContext context);
+            void OnAimingZ(InputAction.CallbackContext context);
         }
     }
 }
