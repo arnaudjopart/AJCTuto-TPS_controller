@@ -29,13 +29,14 @@ public class CharacterMouvement : MonoBehaviour
     public GameObject m_aimingCamera;
     private float aimVelocityX;
     private float aimVelocityZ;
-    
 
+    private RigManipulator m_rigManipulator;
 
     void Awake()
     {
         m_controls = new CustomControllers();
         m_animator = GetComponent<Animator>();
+        m_rigManipulator = GetComponent<RigManipulator>();
 
         m_controls.Mouvement.SwitchToAim.started += SwitchToAimState;
         m_controls.Mouvement.SwitchToAim.canceled += SwitchToDefaultState;
@@ -47,6 +48,7 @@ public class CharacterMouvement : MonoBehaviour
         m_currentState = STATE.DEFAULT;
         m_animator.SetBool("SwitchToAimBool",false);
         m_aimingCamera.SetActive(false);
+        m_rigManipulator.DeactivateAimingRig();
     }
 
     private void SwitchToAimState(InputAction.CallbackContext _obj)
@@ -54,6 +56,7 @@ public class CharacterMouvement : MonoBehaviour
         m_currentState = STATE.AIMING;
         m_animator.SetBool("SwitchToAimBool",true);
         m_aimingCamera.SetActive(true);
+        m_rigManipulator.ActivateAimingRig();
     }
 
     private void OnEnable()
