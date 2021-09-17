@@ -41,12 +41,14 @@ public class CharacterMouvement : MonoBehaviour
     private void SwitchToDefaultState(InputAction.CallbackContext _obj)
     {
         m_currentState = STATE.DEFAULT;
+        m_animator.SetBool("SwitchToAimBool",false);
         m_aimingCamera.SetActive(false);
     }
 
     private void SwitchToAimState(InputAction.CallbackContext _obj)
     {
         m_currentState = STATE.AIMING;
+        m_animator.SetBool("SwitchToAimBool",true);
         m_aimingCamera.SetActive(true);
     }
 
@@ -87,6 +89,11 @@ public class CharacterMouvement : MonoBehaviour
                 
                 break;
             case STATE.AIMING:
+
+                var currentCameraForward = m_camera.transform.forward;
+                var forwardCameraOnXZplane = Vector3.ProjectOnPlane(currentCameraForward, Vector3.up);
+                transform.rotation = Quaternion.LookRotation(forwardCameraOnXZplane, Vector3.up);
+                
                 break;
         }
         
