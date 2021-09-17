@@ -20,6 +20,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SwitchToAim",
+                    "type": "Button",
+                    "id": "2d2e63e0-dde6-428a-83e8-93e31e925b2b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -108,6 +116,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "46ff7b78-eb95-4e90-b02c-e0433ee05b83",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SwitchToAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29bec242-4927-48c0-ab4d-330419ae4994",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SwitchToAim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

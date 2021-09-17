@@ -35,6 +35,14 @@ namespace InputController
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchToAim"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d2e63e0-dde6-428a-83e8-93e31e925b2b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -125,6 +133,28 @@ namespace InputController
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46ff7b78-eb95-4e90-b02c-e0433ee05b83"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SwitchToAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""29bec242-4927-48c0-ab4d-330419ae4994"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SwitchToAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -163,6 +193,7 @@ namespace InputController
             m_Mouvement = asset.FindActionMap("Mouvement", throwIfNotFound: true);
             m_Mouvement_Look = m_Mouvement.FindAction("Look", throwIfNotFound: true);
             m_Mouvement_Move = m_Mouvement.FindAction("Move", throwIfNotFound: true);
+            m_Mouvement_SwitchToAim = m_Mouvement.FindAction("SwitchToAim", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -214,12 +245,14 @@ namespace InputController
         private IMouvementActions m_MouvementActionsCallbackInterface;
         private readonly InputAction m_Mouvement_Look;
         private readonly InputAction m_Mouvement_Move;
+        private readonly InputAction m_Mouvement_SwitchToAim;
         public struct MouvementActions
         {
             private @CustomControllers m_Wrapper;
             public MouvementActions(@CustomControllers wrapper) { m_Wrapper = wrapper; }
             public InputAction @Look => m_Wrapper.m_Mouvement_Look;
             public InputAction @Move => m_Wrapper.m_Mouvement_Move;
+            public InputAction @SwitchToAim => m_Wrapper.m_Mouvement_SwitchToAim;
             public InputActionMap Get() { return m_Wrapper.m_Mouvement; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -235,6 +268,9 @@ namespace InputController
                     @Move.started -= m_Wrapper.m_MouvementActionsCallbackInterface.OnMove;
                     @Move.performed -= m_Wrapper.m_MouvementActionsCallbackInterface.OnMove;
                     @Move.canceled -= m_Wrapper.m_MouvementActionsCallbackInterface.OnMove;
+                    @SwitchToAim.started -= m_Wrapper.m_MouvementActionsCallbackInterface.OnSwitchToAim;
+                    @SwitchToAim.performed -= m_Wrapper.m_MouvementActionsCallbackInterface.OnSwitchToAim;
+                    @SwitchToAim.canceled -= m_Wrapper.m_MouvementActionsCallbackInterface.OnSwitchToAim;
                 }
                 m_Wrapper.m_MouvementActionsCallbackInterface = instance;
                 if (instance != null)
@@ -245,6 +281,9 @@ namespace InputController
                     @Move.started += instance.OnMove;
                     @Move.performed += instance.OnMove;
                     @Move.canceled += instance.OnMove;
+                    @SwitchToAim.started += instance.OnSwitchToAim;
+                    @SwitchToAim.performed += instance.OnSwitchToAim;
+                    @SwitchToAim.canceled += instance.OnSwitchToAim;
                 }
             }
         }
@@ -271,6 +310,7 @@ namespace InputController
         {
             void OnLook(InputAction.CallbackContext context);
             void OnMove(InputAction.CallbackContext context);
+            void OnSwitchToAim(InputAction.CallbackContext context);
         }
     }
 }
