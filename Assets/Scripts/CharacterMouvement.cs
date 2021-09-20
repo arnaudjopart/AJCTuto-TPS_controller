@@ -101,15 +101,13 @@ public class CharacterMouvement : MonoBehaviour
                 var forwardCameraOnXZplane = Vector3.ProjectOnPlane(currentCameraForward, Vector3.up);
                 transform.rotation = Quaternion.LookRotation(forwardCameraOnXZplane, Vector3.up);
 
-                var inputValueX = m_controls.Mouvement.AimingX.ReadValue<float>();
-                var inputValueZ = m_controls.Mouvement.AimingZ.ReadValue<float>();
-
-                inputValueX = Mathf.SmoothDamp(m_animator.GetFloat("SpeedAimX"), inputValueX, ref aimVelocityX, .1f);
-                inputValueZ = Mathf.SmoothDamp(m_animator.GetFloat("SpeedAimZ"), inputValueZ, ref aimVelocityZ, .1f);
+                var inputValue = m_controls.Mouvement.Move.ReadValue<Vector2>();
+                var inputValueX = Mathf.SmoothDamp(m_animator.GetFloat("SpeedAimX"), inputValue.x, ref aimVelocityX, .1f);
+                var inputValueZ = Mathf.SmoothDamp(m_animator.GetFloat("SpeedAimZ"), inputValue.y, ref aimVelocityZ, .1f);
                 
                 m_animator.SetFloat("SpeedAimX",inputValueX);
                 m_animator.SetFloat("SpeedAimZ",inputValueZ);
-                
+  
                 break;
         }
         
